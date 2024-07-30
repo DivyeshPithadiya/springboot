@@ -1,0 +1,24 @@
+package com.itv.repo;
+
+import java.util.List;
+
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.stereotype.Repository;
+
+import com.itv.models.Job;
+
+@Repository
+public interface JobRepo extends JpaRepository<Job, Integer>, PagingAndSortingRepository<Job, Integer> {
+	
+	public List<Job> findByIdAndSalary(int id, double salary);
+
+	public List<Job> findByIdAndSalary(int id, double salary, PageRequest page);
+	
+	@Query(value = "select * from job where title = ?1", nativeQuery = true)
+	public List<Job> getByTitle(String title);
+	
+}
