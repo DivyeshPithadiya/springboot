@@ -3,8 +3,8 @@ package com.itv.validations;
 import java.util.Arrays;
 import java.util.List;
 
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
 
 public class DepartmentValidator implements ConstraintValidator<DepartmentValidation, String> {
 
