@@ -23,4 +23,9 @@ public class UserServiceImpl implements UserService {
 		return "User registered";
 	}
 
+	@Override
+	public User login(User user) {
+		return null;
+	}
+
 }
